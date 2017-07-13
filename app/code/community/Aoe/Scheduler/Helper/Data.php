@@ -145,7 +145,7 @@ class Aoe_Scheduler_Helper_Data extends Mage_Core_Helper_Abstract
         $schedules = Mage::getModel('cron/schedule')->getCollection(); /* @var $schedules Mage_Cron_Model_Mysql4_Schedule_Collection */
         $schedules->getSelect()->limit(1)->order('executed_at DESC');
         $schedules->addFieldToFilter(
-            array('status'),
+            'status',
             array(
                 array('eq' => Aoe_Scheduler_Model_Schedule::STATUS_SUCCESS),
                 array('eq' => Aoe_Scheduler_Model_Schedule::STATUS_REPEAT)
